@@ -13,7 +13,7 @@ setup(
     version = "0.1.0",
     author = "Amber Trask",
     author_email = "contact@openmined.com",
-    description = ("A library for Homomorphically Encrypted Deep Learning Algorithms"),
+    description = ("A client library for Federated Deep Learning on the Ethereum Blockchain"),
     license = "Apache-2.0",
     keywords = "deep learning machine artificial intelligence homomorphic encryption",
     packages=['mine', 'test'],
