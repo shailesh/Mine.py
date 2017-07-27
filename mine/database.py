@@ -50,14 +50,17 @@ class Database(object):
 
 class CSVDataset(object):
 
-    def __init__(self,location):
-        """Proof of concept assumes location is the full path to a .csv file"""
+    def __init__(self,location,delimiter=","):
+        """Proof of concept assumes location is the full path to a .csv file.
+        The first line of the file is a list of labels (as is customary with CSVs).
+        Each line represents an entry and each row is comma delimited by default."""
 
+        self.delimiter = delimiter
         self.location = location
         self.name = self.location.split("/")[-1]
 
         f = open(self.location,'r')
-        self.labels = f.readline()[:-1].split(",")
+        self.labels = f.readline()[:-1].split(self.delimiter)
         f.close()
 
     def __len__(self):
