@@ -1,5 +1,6 @@
 from os import listdir
 from os.path import isfile, join
+import json
 
 class Database(object):
 
@@ -25,6 +26,15 @@ class Database(object):
     def keys(self):
         return self.datasets.keys()
 
+    def to_dict(self):
+        me = list()
+        for d in self.datasets.values():
+            me.append(d.to_dict())
+        return me
+
+    def to_json(self):
+        return json.dumps(self.to_dict())
+
     def __getitem__(self,i):
         if(type(i) == int):
             return list(self.datasets.values())[i]
@@ -46,11 +56,25 @@ class CSVDataset(object):
         self.location = location
         self.name = self.location.split("/")[-1]
 
+        f = open(self.location,'r')
+        self.labels = f.readline()[:-1].split(",")
+        f.close()
+
     def __len__(self):
         f = open(self.location,'r')
         raw = f.readlines()
         f.close()
         return len(raw)
+
+    def to_dict(self):
+        me = {}
+        me['name'] = self.name
+        me['length'] = len(self)
+        me['labels'] = self.labels
+        return me
+
+    def to_json(self):
+        return json.dumps(self.to_dict())
 
     def __repr__(self):
         return str(self)
