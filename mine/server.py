@@ -1,3 +1,4 @@
+import os
 from mine.database import CSVDataset,Database
 from flask import Flask
 app = Flask(__name__)
@@ -8,4 +9,5 @@ def init():
 
 @app.route("/datasets")
 def datasets():
-    return "JSON of data"
+    db = Database(os.environ['OPENMINED_DB_LOC'])
+    return db.to_json()
