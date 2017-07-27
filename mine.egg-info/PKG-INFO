@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: mine
+Version: 0.1.0
+Summary: A client library for Federated Deep Learning on the Ethereum Blockchain
+Home-page: UNKNOWN
+Author: Amber Trask
+Author-email: contact@openmined.org
+License: Apache-2.0
+Description: # mine
+        Personal Data Warehouse
+        
+Keywords: deep learning machine artificial intelligence homomorphic encryption
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Alpha
