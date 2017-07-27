@@ -1,9 +1,0 @@
-setup.py
-mine/__init__.py
-mine/database.py
-mine/server.py
-mine/trainer.py
-mine.egg-info/PKG-INFO
-mine.egg-info/SOURCES.txt
-mine.egg-info/dependency_links.txt
-mine.egg-info/top_level.txt
